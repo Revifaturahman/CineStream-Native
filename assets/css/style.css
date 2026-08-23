@@ -261,7 +261,7 @@ body {
     overflow: hidden;
     transition: var(--transition-base);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -349,7 +349,6 @@ body {
     padding: 0.85rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .movie-title {
@@ -626,7 +625,6 @@ body {
     text-decoration: none;
     color: inherit;
     display: block;
-    height: 100%;
 }
 
 .movie-card-link:hover {
