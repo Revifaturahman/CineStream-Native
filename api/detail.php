@@ -38,7 +38,7 @@ if ($movieId <= 0) {
 }
 
 // Muat Header & Navbar
-require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <main class="main-content">
@@ -87,6 +87,9 @@ require_once __DIR__ . '/../includes/header.php';
         $voteCount = isset($movie['vote_count']) ? number_format($movie['vote_count']) : '0';
         $releaseDate = !empty($movie['release_date']) ? $movie['release_date'] : 'N/A';
         $releaseYear = !empty($movie['release_date']) ? substr($movie['release_date'], 0, 4) : 'N/A';
+
+        // Muat Header & Navbar
+        require_once __DIR__ . '/../includes/header.php';
         
         // Format Runtime (Menit -> Jam & Menit)
         $runtimeFormatted = 'N/A';

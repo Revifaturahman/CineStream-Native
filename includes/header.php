@@ -11,7 +11,21 @@ $currentSearch = isset($_GET['search']) ? trim($_GET['search']) : null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars(APP_NAME); ?> - <?= htmlspecialchars(APP_TAGLINE); ?></title>
+    <?php
+        $pageTitle = APP_NAME . ' - ' . APP_TAGLINE;
+
+        if (isset($title) && !empty($title)) {
+            $pageTitle = $title;
+
+            if (isset($releaseYear) && $releaseYear !== 'N/A') {
+                $pageTitle .= " ($releaseYear)";
+            }
+
+            $pageTitle .= ' - ' . APP_NAME;
+        }
+    ?>
+
+    <title><?= htmlspecialchars($pageTitle); ?></title>
     
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
