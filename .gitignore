@@ -1,0 +1,8 @@
+# Environment Configuration
+.env
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,687 @@
+/**
+ * CineStream - Modern Dark Theme Stylesheet
+ */
+
+:root {
+    --bg-main: #0b0c10;
+    --bg-surface: #151722;
+    --bg-card: #1c1e2d;
+    --bg-darker: #07080b;
+    --color-primary: #e50914;
+    --color-primary-hover: #f40612;
+    --color-accent: #00d2d3;
+    --text-main: #ffffff;
+    --text-muted: #a0a6b5;
+    --border-color: #2b2e40;
+    --transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background utilities */
+.bg-dark-theme {
+    background-color: var(--bg-main);
+}
+
+.bg-surface {
+    background-color: var(--bg-surface);
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: #2f334a;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.header-navbar {
+    background: rgba(11, 12, 16, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-base);
+    z-index: 1030;
+}
+
+.header-navbar.scrolled {
+    background: rgba(7, 8, 11, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.brand-name {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #c0c5d2;
+    padding: 0.5rem 1rem;
+    transition: var(--transition-base);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--color-primary) !important;
+}
+
+/* Search Bar */
+.search-form {
+    min-width: 260px;
+}
+
+.custom-search-input {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    border-radius: 20px 0 0 20px !important;
+    font-size: 0.9rem;
+    padding: 0.45rem 1rem;
+    transition: var(--transition-base);
+}
+
+.custom-search-input:focus {
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.4) !important;
+    border-color: var(--color-primary) !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.custom-search-btn {
+    border-radius: 0 20px 20px 0 !important;
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    font-size: 0.9rem;
+    transition: var(--transition-base);
+}
+
+.custom-search-btn:hover {
+    background-color: var(--color-primary-hover) !important;
+}
+
+/* Dropdown Menu */
+.custom-dropdown {
+    background-color: #171926 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px;
+    padding: 0.5rem;
+    max-height: 380px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.custom-dropdown .dropdown-item {
+    color: #c5c9d6;
+    font-size: 0.88rem;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    transition: var(--transition-base);
+}
+
+.custom-dropdown .dropdown-item:hover,
+.custom-dropdown .dropdown-item.active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Hero Banner
+   ========================================================================== */
+.hero-banner {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin-top: -70px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(11, 12, 16, 0.4) 0%,
+        rgba(11, 12, 16, 0.7) 60%,
+        rgba(11, 12, 16, 1) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-overlay-side {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(11, 12, 16, 0.95) 0%,
+        rgba(11, 12, 16, 0.7) 40%,
+        rgba(11, 12, 16, 0) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-overview {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Owl Carousel Custom Styling
+   ========================================================================== */
+.trending-carousel-container {
+    position: relative;
+}
+
+.trending-carousel .owl-stage-outer {
+    padding: 10px 0;
+}
+
+.trending-carousel .owl-nav {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.trending-carousel .owl-nav button.owl-prev,
+.trending-carousel .owl-nav button.owl-next {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    width: 34px;
+    height: 34px;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem !important;
+    transition: var(--transition-base);
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.trending-carousel .owl-nav button.owl-prev:hover,
+.trending-carousel .owl-nav button.owl-next:hover {
+    background: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Movie Cards (Grid & Carousel)
+   ========================================================================== */
+.movie-card {
+    position: relative;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-poster-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 150%; /* 2:3 Aspect Ratio */
+    overflow: hidden;
+    background-color: #1a1c26;
+}
+
+.movie-poster-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Dark Overlay & Play Icon on Hover */
+.movie-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.movie-play-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.8);
+    transform: scale(0.7);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(229, 9, 20, 0.2);
+}
+
+.movie-card:hover .movie-poster-wrapper img {
+    transform: scale(1.08);
+}
+
+.movie-card:hover .movie-card-overlay {
+    opacity: 1;
+}
+
+.movie-card:hover .movie-play-btn {
+    transform: scale(1);
+}
+
+/* Movie Card Badges & Info */
+.movie-badge-rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    color: #f1c40f;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-card-body {
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.movie-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+.movie-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   Section Headers & UI Utilities
+   ========================================================================== */
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 1.25rem;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+.hover-danger:hover {
+    color: var(--color-primary) !important;
+}
+
+.hover-light:hover {
+    color: #ffffff !important;
+}
+
+.footer-link {
+    color: #8b92a4;
+    text-decoration: none;
+    line-height: 1.9;
+    transition: var(--transition-base);
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
+    padding-left: 4px;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 60vh;
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .search-form {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   Detail Film Page Styling (Tahap 2A)
+   ========================================================================== */
+.detail-hero {
+    position: relative;
+    min-height: 65vh;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin-top: -70px;
+    padding-top: 130px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.detail-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(11, 12, 16, 0.6) 0%,
+        rgba(11, 12, 16, 0.85) 50%,
+        rgba(11, 12, 16, 1) 100%
+    );
+    pointer-events: none;
+}
+
+.detail-overlay-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 20% 40%,
+        rgba(11, 12, 16, 0.4) 0%,
+        rgba(11, 12, 16, 0.95) 80%
+    );
+    pointer-events: none;
+}
+
+.detail-poster-container {
+    position: relative;
+    z-index: 2;
+}
+
+.detail-poster-img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 9, 20, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-base);
+}
+
+.detail-poster-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(229, 9, 20, 0.25);
+}
+
+.detail-content {
+    position: relative;
+    z-index: 2;
+}
+
+.detail-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.detail-tagline {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #a0a6b5;
+}
+
+.meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.35rem 0.85rem;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.meta-pill-rating {
+    background: rgba(241, 196, 15, 0.15);
+    border-color: rgba(241, 196, 15, 0.4);
+    color: #f1c40f;
+}
+
+.genre-pill {
+    display: inline-block;
+    background: rgba(229, 9, 20, 0.15);
+    border: 1px solid rgba(229, 9, 20, 0.4);
+    color: #ff6b6b;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.genre-pill:hover {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.detail-overview-box {
+    background: rgba(21, 23, 34, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1.25rem;
+}
+
+/* Cast Cards */
+.cast-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-base);
+    height: 100%;
+}
+
+.cast-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(229, 9, 20, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cast-photo-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 130%;
+    overflow: hidden;
+    background-color: #1a1c26;
+}
+
+.cast-photo-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cast-card:hover .cast-photo-wrapper img {
+    transform: scale(1.05);
+}
+
+.cast-card-body {
+    padding: 0.75rem;
+}
+
+.cast-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cast-character {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Link wrapper for cards */
+.movie-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.movie-card-link:hover {
+    color: inherit;
+}
+
+/* ==========================================================================
+   Player Section Styling (Tahap 2B)
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+.player-section {
+    scroll-margin-top: 85px;
+}
+
+.player-wrapper {
+    background-color: #000000;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(229, 9, 20, 0.2);
+}
+
+.player-ratio-container {
+    background-color: #000000;
+    width: 100%;
+}
+
+.player-ratio-container iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+.server-switcher {
+    gap: 4px;
+}
+
+.server-switcher .server-btn {
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px !important;
+    transition: var(--transition-base);
+}
+
+.server-switcher .server-btn:hover {
+    transform: translateY(-1px);
+}
+
+.player-footer-info {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
