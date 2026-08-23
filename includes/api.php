@@ -47,7 +47,8 @@ function tmdb_request($endpoint, $params = []) {
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $curlError = curl_error($ch);
-        curl_close($ch);
+        // curl_close($ch);
+        unset($ch);
 
         if ($curlError) {
             return [
