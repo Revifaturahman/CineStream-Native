@@ -11,6 +11,7 @@ $currentSearch = isset($_GET['search']) ? trim($_GET['search']) : null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="uhoLPZigkmGubHEpLD4OGRBcoPWJ06eIolpIyhJjwxk" />
     <?php
         $pageTitle = APP_NAME . ' - ' . APP_TAGLINE;
 
