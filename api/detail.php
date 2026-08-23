@@ -4,8 +4,8 @@
  * Menampilkan detail lengkap informasi film dan daftar pemain (cast) dari TMDB API
  */
 
-require_once __DIR__ . '/config/config.php';
-require_once __DIR__ . '/includes/api.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../includes/api.php';
 
 // Ambil dan validasi ID Film
 $movieId = isset($_GET['id']) && is_numeric($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -38,7 +38,7 @@ if ($movieId <= 0) {
 }
 
 // Muat Header & Navbar
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <main class="main-content">
@@ -295,5 +295,5 @@ require_once __DIR__ . '/includes/header.php';
 
 <?php
 // Muat Footer
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/../includes/footer.php';
 ?>
